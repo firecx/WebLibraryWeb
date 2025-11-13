@@ -2,13 +2,16 @@ class UIRendererAuthors {
     renderAuthors(authors, containerId) {
         this.container = document.getElementById(containerId);
 
+        if (!Array.isArray(authors)) {
+            authors = [authors];
+        }
+
         if (!authors || authors.length === 0) {
             this.container.innerHTML = '<p>Not found</p>';
             return;
         }
         
         this.container.innerHTML = `
-            <h2>Авторы (${authors.length})</h2>
             <div class="authors-grid">
                 ${authors.map(author => `
                     <div class="author-card" onclick="selectAuthor(${author.id})">

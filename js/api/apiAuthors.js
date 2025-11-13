@@ -32,7 +32,7 @@ class ApiAuthors {
     }
 
     async getAuthorsById(id) {
-        return await this.get(`${id}`);
+        return await this.get(`/${id}`);
     }
 }
 
