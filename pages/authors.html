@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Авторы</title>
     <link rel="stylesheet" href="../css/authors.css">
 </head>
-<body>
+<body onload="loadAuthors()">
     <div id="data-container"></div>
-
-    <button onclick="loadAuthors()">загрузить авторов</button>
 
     <script src="../js/api/apiAuthors.js"></script>
     <script src="../js/ui/uiRendererAuthors.js"></script>
