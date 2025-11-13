@@ -1,7 +1,7 @@
-async function loadAuthors() {
+async function loadAuthors(containerId) {
     try {
         const authors = await apiAuthors.getAuthors();
-        uiRendererAuthors.renderAuthors(authors);
+        uiRendererAuthors.renderAuthors(authors, containerId);
     }
     catch (error) {
         console.error('Error loading authors:', error);

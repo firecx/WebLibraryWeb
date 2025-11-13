@@ -1,16 +1,12 @@
 class UIRendererAuthors {
-    constructor(containerId = 'data-container') {
+    renderAuthors(authors, containerId) {
         this.container = document.getElementById(containerId);
-        this.loadingElement = document.getElementById('loading');
-        this.errorElement = document.getElementById('error-message');
-    }
 
-    renderAuthors(authors) {
         if (!authors || authors.length === 0) {
             this.container.innerHTML = '<p>Not found</p>';
             return;
         }
-
+        
         this.container.innerHTML = `
             <h2>Авторы (${authors.length})</h2>
             <div class="authors-grid">
