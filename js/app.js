@@ -8,12 +8,12 @@ async function loadAuthors(containerId) {
     }
 }
 
-async function loadAuthor(containerId, id) {
+async function loadBooks(containerId) {
     try {
-        const authors = await apiAuthors.getAuthorsById(id);
-        uiRendererAuthors.renderAuthors(authors, containerId);
+        const books = await apiBooks.getBooks();
+        uiRendererBooks.renderBooks(books, containerId);
     }
     catch (error) {
-        console.error('Error loading authors:', error);
+        console.error('Error loading books:', error);
     }
 }

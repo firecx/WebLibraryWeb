@@ -15,8 +15,10 @@ class UiRendererBooks {
             <div class="books-grid">
                 ${books.map(book => `
                     <div class="book-card" onclick="selectBook(${book.id})">
-                        <h3>${book.title}</h3>
-                        <p>by ${book.authorNickname}</p>
+                        <h3>${book.name}</h3>
+                        <p>by ${book.author.nickname}</p>
+                        <p>series: "${book.series}"</p>
+                        <p>volume: "${book.volume}"</p>
                     </div>
                 `).join('')}
             </div>

@@ -1,0 +1,8 @@
+services:
+  weblibrary:
+    image: weblibrary-ui:0.0.2
+    container_name: weblibrary-ui
+    build:
+      context: .
+    ports:
+      - "8081:80"
