@@ -14,7 +14,7 @@ class UIRendererAuthors {
         this.container.innerHTML = `
             <div class="authors-grid">
                 ${authors.map(author => `
-                    <div class="author-card" onclick="selectAuthor(${author.id})">
+                    <div class="authors-card" onclick="selectAuthor(${author.id})">
                         <h3>${author.nickname}</h3>
                         <p>${author.surname}</p>
                         <p>${author.name}</p>
