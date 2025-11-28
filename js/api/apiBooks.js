@@ -1,9 +1,7 @@
 class ApiBooks {
-    constructor(baseURL = 'http://localhost:8080/api/books') {
-        this.baseURL = baseURL;
-    }
+    static baseURL = 'http://localhost:8080/api/books';
 
-    async get(endpoint, params = {}) {
+    static async get(endpoint, params = {}) {
         try {
             const url = new URL(`${this.baseURL}${endpoint}`);
 
@@ -27,13 +25,11 @@ class ApiBooks {
         }
     }
 
-    async getBooks() {
+    static async getBooks() {
         return await this.get('');
     }
 
-    async getBooksById(id) {
+    static async getBooksById(id) {
         return await this.get(`/${id}`);
     }
 }
-
-const apiBooks = new ApiBooks();

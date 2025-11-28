@@ -1,6 +1,6 @@
 async function loadAuthors(containerId) {
     try {
-        const authors = await apiAuthors.getAuthors();
+        const authors = await ApiAuthors.getAuthors();
         UIRendererAuthors.renderAuthors(authors, containerId);
     }
     catch (error) {
@@ -10,7 +10,7 @@ async function loadAuthors(containerId) {
 
 async function loadBooks(containerId) {
     try {
-        const books = await apiBooks.getBooks();
+        const books = await ApiBooks.getBooks();
         UiRendererBooks.renderBooks(books, containerId);
     }
     catch (error) {

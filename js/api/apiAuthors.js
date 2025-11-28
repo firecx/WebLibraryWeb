@@ -1,9 +1,7 @@
 class ApiAuthors {
-    constructor(baseURL = 'http://localhost:8080/api/authors') {
-        this.baseURL = baseURL;
-    }
+    static baseURL = 'http://localhost:8080/api/authors';
 
-    async get(endpoint, params = {}) {
+    static async get(endpoint, params = {}) {
         try {
             const url = new URL(`${this.baseURL}${endpoint}`);
 
@@ -27,13 +25,11 @@ class ApiAuthors {
         }
     }
 
-    async getAuthors() {
+    static async getAuthors() {
         return await this.get('');
     }
 
-    async getAuthorsById(id) {
+    static async getAuthorsById(id) {
         return await this.get(`/${id}`);
     }
 }
-
-const apiAuthors = new ApiAuthors();
