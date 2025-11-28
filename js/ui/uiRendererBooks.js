@@ -1,17 +1,17 @@
 class UiRendererBooks {
-    renderBooks(books, containerId) {
-        this.container = document.getElementById(containerId);
+    static renderBooks(books, containerId) {
+        const container = document.getElementById(containerId);
 
         if (!Array.isArray(books)) {
             books = [books];
         }
 
         if (!books || books.length === 0) {
-            this.container.innerHTML = '<p>Not found</p>';
+            container.innerHTML = '<p>Not found</p>';
             return;
         }
 
-        this.container.innerHTML = `
+        container.innerHTML = `
             <div class="books-grid">
                 ${books.map(book => `
                     <div class="book-card" onclick="selectBook(${book.id})">
@@ -25,5 +25,3 @@ class UiRendererBooks {
         `;
     }
 }
-
-const uiRendererBooks = new UiRendererBooks();

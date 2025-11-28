@@ -1,17 +1,30 @@
 class UIRendererAuthors {
-    renderAuthors(authors, containerId) {
-        this.container = document.getElementById(containerId);
+    static renderAuthors(authors, containerId) {
+        const container = document.getElementById(containerId);
 
         if (!Array.isArray(authors)) {
             authors = [authors];
         }
 
+        // Сортировка авторов по нику (алфавитно, регистронезависимо)
+        try {
+            authors.sort((a, b) => {
+                const na = (a && a.nickname) ? a.nickname : '';
+                const nb = (b && b.nickname) ? b.nickname : '';
+                return na.localeCompare(nb, undefined, { sensitivity: 'base' });
+            });
+        }
+        catch (e) {
+            // В случае некорректной структуры просто продолжим рендер без сортировки
+            console.warn('Authors sort failed:', e);
+        }
+
         if (!authors || authors.length === 0) {
-            this.container.innerHTML = '<p>Not found</p>';
+            container.innerHTML = '<p>Not found</p>';
             return;
         }
-        
-        this.container.innerHTML = `
+
+        container.innerHTML = `
             <div class="authors-grid">
                 ${authors.map(author => `
                     <div class="authors-card" onclick="selectAuthor(${author.id})">
@@ -24,5 +37,3 @@ class UIRendererAuthors {
         `;
     }
 }
-
-const uiRendererAuthors = new UIRendererAuthors();

@@ -1,7 +1,7 @@
 async function loadAuthors(containerId) {
     try {
         const authors = await apiAuthors.getAuthors();
-        uiRendererAuthors.renderAuthors(authors, containerId);
+        UIRendererAuthors.renderAuthors(authors, containerId);
     }
     catch (error) {
         console.error('Error loading authors:', error);
@@ -11,7 +11,7 @@ async function loadAuthors(containerId) {
 async function loadBooks(containerId) {
     try {
         const books = await apiBooks.getBooks();
-        uiRendererBooks.renderBooks(books, containerId);
+        UiRendererBooks.renderBooks(books, containerId);
     }
     catch (error) {
         console.error('Error loading books:', error);
