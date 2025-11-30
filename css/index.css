@@ -1,0 +1,21 @@
+.top-line {
+  font-size: 18px;
+  max-width: 100%;
+  margin: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+    flex-basis: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.authorization {
+    flex-basis: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+}
