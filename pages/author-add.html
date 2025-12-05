@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить автора</title>
+</head>
+<body>
+    <div class="add-author-container">
+        <h1>Добавить автора</h1>
+        <form id="author-form">
+            <label for="nickname">Ник:</label>
+            <input type="text" id="nickname" name="nickname" required>
+
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="surname">Фамилия:</label>
+            <input type="text" id="surname" name="surname" required>
+            
+            <button type="submit">Сохранить</button>
+        </form>
+    </div>
+</body>
+    <script src="../js/api/apiAuthors.js"></script>
+    <script src="../js/app.js"></script>
+</html>
