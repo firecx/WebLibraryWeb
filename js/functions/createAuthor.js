@@ -1,24 +1,4 @@
-async function loadAuthors(containerId) {
-    try {
-        const authors = await ApiAuthors.getAuthors();
-        UIRendererAuthors.renderAuthors(authors, containerId);
-    }
-    catch (error) {
-        console.error('Error loading authors:', error);
-    }
-}
-
-async function loadBooks(containerId) {
-    try {
-        const books = await ApiBooks.getBooks();
-        UiRendererBooks.renderBooks(books, containerId);
-    }
-    catch (error) {
-        console.error('Error loading books:', error);
-    }
-}
-
-async function createAuthor(formId = `author-form`) {
+async function createAuthor(formId = 'author-form') {
     const form = document.getElementById(formId);
 
     if (!form) return;
