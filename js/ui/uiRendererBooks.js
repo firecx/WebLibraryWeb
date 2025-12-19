@@ -7,7 +7,7 @@ class UiRendererBooks {
         }
 
         if (!books || books.length === 0) {
-            container.innerHTML = '<p>Not found</p>';
+            container.innerHTML = '<p class="not-found">Not found</p>';
             return;
         }
 

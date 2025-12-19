@@ -101,3 +101,12 @@
 }
 
 .home-link .btn:hover { transform: translateY(-1px); }
+
+/* Message when no authors are present */
+.not-found {
+    text-align: center;
+    color: #6b7280; /* gray-500 */
+    font-size: 1.125rem; /* 18px */
+    margin-top: 40px;
+    font-style: italic;
+}

@@ -20,7 +20,7 @@ class UIRendererAuthors {
         }
 
         if (!authors || authors.length === 0) {
-            container.innerHTML = '<p>Not found</p>';
+            container.innerHTML = '<p class="not-found">Not found</p>';
             return;
         }
 
