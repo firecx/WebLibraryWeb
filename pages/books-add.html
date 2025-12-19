@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить книгу</title>
+    <link rel="stylesheet" href="../css/books-add.css">
+</head>
+<body>
+    <div class="add-book-container">
+        <h1>Добавить книгу</h1>
+        <form id="book-form">
+            <label for="name">Название:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="authorId">Автор:</label>
+            <select id="authorId" name="authorId" required>
+                <option value="">Загрузка авторов...</option>
+            </select>
+
+            <label for="series">Серия:</label>
+            <input type="text" id="series" name="series">
+
+            <label for="volume">Том/Номер:</label>
+            <input type="text" id="volume" name="volume">
+
+            <button type="submit">Сохранить</button>
+        </form>
+    </div>
+</body>
+    <script src="../js/api/apiBooks.js"></script>
+    <script src="../js/api/apiAuthors.js"></script>
+    <script src="../js/functions/createBook.js"></script>
+</html>

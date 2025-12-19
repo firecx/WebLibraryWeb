@@ -1,0 +1,161 @@
+/* Styles for Add Book page (based on authors-add.css) */
+:root{
+    --bg: #f7f9fc;
+    --card-bg: #ffffff;
+    --accent: #007bff;
+    --accent-hover: #0069d9;
+    --muted: #666;
+    --radius: 10px;
+}
+
+body{
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: var(--bg);
+    color: #222;
+    margin: 0;
+    padding: 32px 16px;
+}
+
+.add-book-container{
+    max-width: 720px;
+    margin: 24px auto;
+    background: var(--card-bg);
+    padding: 28px 26px;
+    border-radius: var(--radius);
+    box-shadow: 0 6px 20px rgba(16,24,40,0.06);
+}
+
+.add-book-container h1{
+    margin: 0 0 18px 0;
+    font-size: 22px;
+}
+
+form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 18px;
+    align-items: center;
+}
+
+form label{
+    display: block;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 6px;
+}
+
+input[type="text"], input[type="number"], textarea{
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e0e6ef;
+    border-radius: 8px;
+    font-size: 15px;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+/* Select (author) styling to match text inputs */
+select, select:disabled {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e0e6ef;
+    border-radius: 8px;
+    font-size: 15px;
+    background: #fff;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, #333 50%), linear-gradient(135deg, #333 50%, transparent 50%);
+    background-position: calc(100% - 18px) calc(1em + 2px), calc(100% - 13px) calc(1em + 2px);
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(0,123,255,0.08);
+}
+
+/* ensure select spans full-width when needed */
+.full-width select {
+    grid-column: 1 / -1;
+}
+
+input:focus, textarea:focus{
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(11,118,209,0.08);
+}
+
+.full-width{
+    grid-column: 1 / -1;
+}
+
+.form-actions{
+    grid-column: 1 / -1;
+    display:flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 6px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 16px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn.secondary{
+    background: #f1f5f9;
+    color: #1f2937;
+    font-weight: 500;
+}
+
+.btn:disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+@media (max-width: 640px){
+    form{ grid-template-columns: 1fr; }
+    .form-actions{ justify-content: center; }
+}
+
+/* Style native submit buttons inside the book form to match .btn */
+#book-form button[type="submit"],
+#book-form input[type="submit"]{
+    display: inline-block;
+    padding: 10px 16px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#book-form button[type="submit"]:hover,
+#book-form input[type="submit"]:hover{
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+}
+
+#book-form button[type="submit"]:active,
+#book-form input[type="submit"]:active{
+    transform: translateY(0);
+}
+
+#book-form button[type="submit"]:disabled,
+#book-form input[type="submit"]:disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
+}

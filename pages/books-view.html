@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Книги</title>
-    <link rel="stylesheet" href="../css/books.css">
+    <link rel="stylesheet" href="../css/books-view.css">
 </head>
 <body onload="loadBooks(`data-container`)">
     <div id="data-container"></div>
+
+    <div class="add-book-link">
+        <a href="books-add.html" class="btn add-book-btn">Добавить книгу</a>
+    </div>
 
     <script src="../js/api/apiBooks.js" defer></script>
     <script src="../js/ui/uiRendererBooks.js" defer></script>
