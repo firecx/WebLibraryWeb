@@ -57,11 +57,41 @@ class ApiBooks {
         }
     }
 
+    static async delete(endpoint) {
+        try {
+            const url = new URL(`${this.baseURL}${endpoint}`);
+
+            const response = await fetch(url, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            if (response.status === 204) return null;
+
+            return await response.json();
+        }
+        catch (error) {
+            console.error('API Error: ', error);
+            throw error;
+        }
+    }
+
     static async createBook(book) {
         return await this.post('', book);
     }
 
     static async getBooksById(id) {
         return await this.get(`/${id}`);
+    }
+
+    static async deleteBook(id) {
+        if (!id) throw new Error('Book id required');
+        return await this.delete(`/${id}`);
     }
 }

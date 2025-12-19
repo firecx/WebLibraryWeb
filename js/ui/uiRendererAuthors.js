@@ -28,9 +28,14 @@ class UIRendererAuthors {
             <div class="authors-grid">
                 ${authors.map(author => `
                     <div class="authors-card" onclick="selectAuthor(${author.id})">
-                        <h3>${author.nickname}</h3>
-                        <p>${author.surname}</p>
-                        <p>${author.name}</p>
+                        <div class="authors-card-body">
+                            <h3>${author.nickname}</h3>
+                            <p>${author.surname}</p>
+                            <p>${author.name}</p>
+                        </div>
+                        <div class="authors-card-actions">
+                            <button class="btn btn-delete" onclick="event.stopPropagation(); deleteAuthor(${author.id})">Удалить</button>
+                        </div>
                     </div>
                 `).join('')}
             </div>

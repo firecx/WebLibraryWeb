@@ -53,6 +53,31 @@ class ApiAuthors {
         }
     }
 
+    static async delete(endpoint) {
+        try {
+            const url = new URL(`${this.baseURL}${endpoint}`);
+
+            const response = await fetch(url, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            if (response.status === 204) return null;
+
+            return await response.json();
+        }
+        catch (error) {
+            console.error('API Error: ', error);
+            throw error;
+        }
+    }
+
     static async getAuthors() {
         return await this.get('');
     }
@@ -63,5 +88,10 @@ class ApiAuthors {
 
     static async getAuthorsById(id) {
         return await this.get(`/${id}`);
+    }
+
+    static async deleteAuthor(id) {
+        if (!id) throw new Error('Author id required');
+        return await this.delete(`/${id}`);
     }
 }
