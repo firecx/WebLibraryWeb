@@ -135,3 +135,22 @@ input:focus, textarea:focus{
     opacity: 0.6;
     cursor: not-allowed;
 }
+
+/* Home link positioned top-right for this page */
+.home-link {
+    position: relative;
+    display: block;
+    text-align: right;
+    margin: 16px;
+    z-index: 1;
+}
+
+.home-link .btn {
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: #111827;
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(17,24,39,0.08);
+}
+
+.home-link .btn:hover { transform: translateY(-1px); }

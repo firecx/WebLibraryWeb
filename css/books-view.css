@@ -18,6 +18,12 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* ensure cards appear above the fixed home button when interacted */
+.book-card { position: relative; }
+.book-card:hover, .book-card:focus {
+    z-index: 1010;
+}
+
 /* Add-book link/button styling to match other pages */
 .add-book-link {
     margin: 20px 0 0;
@@ -49,3 +55,49 @@
     opacity: 0.6;
     cursor: not-allowed;
 }
+
+/* Local button styles to ensure consistent appearance on this page */
+.btn {
+    display: inline-block;
+    padding: 10px 16px;
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.btn.secondary{
+    background: #f1f5f9;
+    color: #1f2937;
+    font-weight: 500;
+}
+
+.btn:disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn:hover{ background: #0069d9; transform: translateY(-1px); }
+
+/* Home link positioned top-right for this page */
+.home-link {
+    position: relative;
+    display: block;
+    text-align: right;
+    margin: 16px;
+    z-index: 1;
+}
+
+.home-link .btn {
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: #111827;
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(17,24,39,0.08);
+}
+
+.home-link .btn:hover { transform: translateY(-1px); }
